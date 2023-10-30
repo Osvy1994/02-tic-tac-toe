@@ -6,9 +6,6 @@ import { checkWinner, checkEndGame } from "./logic/board";
 import { Winner } from "./components/Winner";
 
 function App() {
-
-  
-
   const [board, setBoard] = useState(() => {
     const boardFromStorage = window.localStorage.getItem("board");
     if (boardFromStorage) return JSON.parse(boardFromStorage);
@@ -30,7 +27,7 @@ function App() {
     window.localStorage.removeItem("board");
   };
 
-  useEffect(() => console.log('useEffect'), [winner])
+  useEffect(() => console.log("useEffect"), [winner]);
 
   const updateBoard = (index) => {
     if (board[index] || winner) return;
